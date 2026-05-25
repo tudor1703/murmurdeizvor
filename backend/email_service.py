@@ -7,8 +7,8 @@ from datetime import datetime, timezone
 from email.message import EmailMessage
 from email.utils import formataddr
 
-from .schemas import ContactRequest
-from .settings import Settings
+from schemas import ContactRequest
+from settings import Settings
 
 logger = logging.getLogger(__name__)
 
