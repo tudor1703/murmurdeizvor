@@ -9,9 +9,9 @@ from slowapi import Limiter
 from slowapi.errors import RateLimitExceeded
 from slowapi.util import get_remote_address
 
-from .email_service import send_contact_email
-from .schemas import ContactRequest, ContactResponse
-from .settings import Settings, get_settings
+from email_service import send_contact_email
+from schemas import ContactRequest, ContactResponse
+from settings import Settings, get_settings
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("murmur")
