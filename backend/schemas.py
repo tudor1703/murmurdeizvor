@@ -17,9 +17,9 @@ class ContactRequest(BaseModel):
     model_config = ConfigDict(str_strip_whitespace=True, extra="ignore")
 
     name: str = Field(min_length=2, max_length=80)
-    email: str = Field(min_length=5, max_length=100)
+    email: Optional[str] = Field(default="", min_length=0, max_length=100)
     phone: str = Field(min_length=6, max_length=30)
-    subject: str = Field(min_length=2, max_length=200)
+    subject: Optional[str] = Field(default="", min_length=0, max_length=200)
     message: str = Field(min_length=5, max_length=2000)
     event_type: Optional[EventType] = None
     preferred_date: Optional[date] = None
