@@ -24,7 +24,8 @@ class Settings(BaseSettings):
     allowed_origins: List[str] = Field(
         default_factory=lambda: [
             "http://localhost:3000",
-            "https://murmurdeizvor.md",
+            "https://murmurdeizvor.com",
+            "https://www.murmurdeizvor.com",
         ]
     )
 
