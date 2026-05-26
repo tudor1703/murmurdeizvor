@@ -25,16 +25,7 @@ app = FastAPI(
     version="1.0.0",
     description="Backend for the Murmur de Izvor restaurant landing page.",
 )
-app.state.limiter = limiter
-
-
-@app.exception_handler(RateLimitExceeded)
-async def rate_limit_handler(_request: Request, _exc: RateLimitExceeded):
-    return HTTPException(
-        status_code=status.HTTP_429_TOO_MANY_REQUESTS,
-        detail="Prea multe încercări. Vă rugăm încercați din nou mai târziu.",
-    )
-
+# app.state.limiter = limiter
 
 app.add_middleware(
     CORSMiddleware,
@@ -44,6 +35,13 @@ app.add_middleware(
     allow_headers=["*"],
     max_age=3600,
 )
+
+@app.exception_handler(RateLimitExceeded)
+async def rate_limit_handler(_request: Request, _exc: RateLimitExceeded):
+    return HTTPException(
+        status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+        detail="Prea multe încercări. Vă rugăm încercați din nou mai târziu.",
+    )
 
 
 @app.get("/api/health", tags=["meta"])
@@ -57,7 +55,7 @@ def health() -> dict[str, str]:
     status_code=status.HTTP_200_OK,
     tags=["contact"],
 )
-@limiter.limit(settings.contact_rate_limit)
+# @limiter.limit(settings.contact_rate_limit)
 async def submit_contact(
     request: Request,
     payload: ContactRequest,
