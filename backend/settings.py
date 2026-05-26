@@ -26,6 +26,8 @@ class Settings(BaseSettings):
             "http://localhost:3000",
             "https://murmurdeizvor.com",
             "https://www.murmurdeizvor.com",
+            "https://murmurdeizvor.onrender.com",
+            "https://murmurdeizvor.vercel.app",
         ]
     )
 
