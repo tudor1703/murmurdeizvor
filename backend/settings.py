@@ -37,6 +37,11 @@ class Settings(BaseSettings):
     @classmethod
     def split_origins(cls, value):
         if isinstance(value, str):
+            value = value.strip()
+            # acceptă și format JSON array
+            if value.startswith("["):
+                import json
+                return json.loads(value)
             return [v.strip() for v in value.split(",") if v.strip()]
         return value
 

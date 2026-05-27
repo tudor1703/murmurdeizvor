@@ -4,10 +4,11 @@ from __future__ import annotations
 import logging
 
 from fastapi import Depends, FastAPI, HTTPException, Request, status
-from fastapi.middleware.cors import CORSMiddleware
 from slowapi import Limiter
 from slowapi.errors import RateLimitExceeded
 from slowapi.util import get_remote_address
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.responses import Response
 
 from .email_service import send_contact_email
 from .schemas import ContactRequest, ContactResponse
@@ -26,14 +27,25 @@ app = FastAPI(
 )
 app.state.limiter = limiter
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=settings.allowed_origins,
-    allow_credentials=False,
-    allow_methods=["POST", "GET", "OPTIONS"],
-    allow_headers=["Content-Type"],
-    max_age=3600,
-)
+
+@app.middleware("http")
+async def cors_middleware(request: Request, call_next):
+    cfg = get_settings()
+    origin = request.headers.get("origin", "")
+
+    if request.method == "OPTIONS":
+        response = Response()
+        if origin in cfg.allowed_origins:
+            response.headers["Access-Control-Allow-Origin"] = origin
+            response.headers["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+            response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+            response.headers["Access-Control-Max-Age"] = "3600"
+        return response
+
+    response = await call_next(request)
+    if origin in cfg.allowed_origins:
+        response.headers["Access-Control-Allow-Origin"] = origin
+    return response
 
 
 @app.exception_handler(RateLimitExceeded)
