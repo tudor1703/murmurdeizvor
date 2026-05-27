@@ -20,7 +20,7 @@ class ContactRequest(BaseModel):
     email: Optional[str] = Field(default="", min_length=0, max_length=100)
     phone: str = Field(min_length=6, max_length=30)
     subject: Optional[str] = Field(default="", min_length=0, max_length=200)
-    message: str = Field(min_length=5, max_length=2000)
+    message: Optional[str] = Field(default="", max_length=2000)
     event_type: Optional[EventType] = None
     preferred_date: Optional[date] = None
     # Honeypot — must remain empty
@@ -38,7 +38,7 @@ class ContactRequest(BaseModel):
             raise ValueError("Număr de telefon invalid")
         return cleaned
 
-    @field_validator("name", "message")
+    @field_validator("name")
     @classmethod
     def not_only_whitespace(cls, value: str) -> str:
         if not value or not value.strip():
