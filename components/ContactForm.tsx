@@ -153,7 +153,7 @@ export default function ContactForm() {
           <input
             id="preferred_date"
             type="date"
-            className={cn(inputBase, "[color-scheme:dark]")}
+            className={cn(inputBase, "[color-scheme:dark] h-auto min-h-[52px]")}
             {...register("preferred_date")}
           />
         </div>
