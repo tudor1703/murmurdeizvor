@@ -217,7 +217,7 @@ export default function ContactForm() {
 
         <div className="mt-5">
           <label htmlFor="message" className={labelBase}>
-            Mesaj *
+            Mesaj
           </label>
           <textarea
             id="message"

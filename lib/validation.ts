@@ -19,10 +19,11 @@ export const contactSchema = z.object({
     .max(30, "Număr de telefon invalid")
     .regex(/^[+0-9\s().-]+$/, "Folosiți doar cifre și caractere uzuale"),
   message: z
-    .string({ required_error: "Mesajul este obligatoriu" })
+    .string()
     .trim()
-    .min(5, "Adăugați câteva detalii")
-    .max(2000, "Mesajul este prea lung"),
+    .max(2000, "Mesajul este prea lung")
+    .optional()
+    .or(z.literal("")),
   event_type: emptyToUndefined.pipe(
     z
       .enum([...EVENT_OPTIONS] as [string, ...string[]])
