@@ -19,26 +19,26 @@ logger = logging.getLogger("murmur")
 settings = get_settings()
 
 limiter = Limiter(key_func=get_remote_address, default_limits=[])
-
 app = FastAPI(
     title="Murmur de Izvor API",
     version="1.0.0",
     description="Backend for the Murmur de Izvor restaurant landing page.",
 )
-# app.state.limiter = limiter
+app.state.limiter = limiter
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Temporar pentru debug
+    allow_origins=settings.allowed_origins,
     allow_credentials=False,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["POST", "GET", "OPTIONS"],
+    allow_headers=["Content-Type"],
     max_age=3600,
 )
 
+
 @app.exception_handler(RateLimitExceeded)
 async def rate_limit_handler(_request: Request, _exc: RateLimitExceeded):
-    return HTTPException(
+    raise HTTPException(
         status_code=status.HTTP_429_TOO_MANY_REQUESTS,
         detail="Prea multe încercări. Vă rugăm încercați din nou mai târziu.",
     )
@@ -55,7 +55,7 @@ def health() -> dict[str, str]:
     status_code=status.HTTP_200_OK,
     tags=["contact"],
 )
-# @limiter.limit(settings.contact_rate_limit)
+@limiter.limit(settings.contact_rate_limit)
 async def submit_contact(
     request: Request,
     payload: ContactRequest,
@@ -69,13 +69,12 @@ async def submit_contact(
     try:
         send_contact_email(payload, config)
     except RuntimeError as exc:
-        # Configuration issue — surface as 503 so frontend shows friendly error
         logger.error("Email service not configured: %s", exc)
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="Serviciul de email nu este disponibil momentan.",
         ) from exc
-    except Exception as exc:  # smtplib + network errors
+    except Exception as exc:
         logger.exception("Failed to send contact email: %s", exc)
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
