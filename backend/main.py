@@ -60,6 +60,9 @@ async def rate_limit_handler(_request: Request, _exc: RateLimitExceeded):
 def health() -> dict[str, str]:
     return {"status": "ok"}
 
+@app.options("/api/contact")
+async def contact_options():
+    return Response()
 
 @app.post(
     "/api/contact",
