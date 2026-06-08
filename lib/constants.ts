@@ -30,37 +30,57 @@ export const NAV_LINKS = [
 export const GALLERY_IMAGES: {
   src: string;
   alt: string;
-  category: "Bucătărie" | "Interior" | "Exterior" | "Evenimente";
+  category: "Interior" | "Exterior" | "Toate";
 }[] = [
   {
-    src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80",
-    alt: "Interior elegant cu lemn natural",
+    src: "\images\IMG_4690.jpeg",
+    alt: "1",
     category: "Interior",
   },
   {
-    src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80",
-    alt: "Sală principală cu lumină caldă",
+    src: "/images/IMG_4733.jpeg",
+    alt: "2",
     category: "Interior",
   },
   {
-    src: "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=1600&q=80",
-    alt: "Terasă exterioară",
+    src: "/images/IMG_4693.jpeg",
+    alt: "3",
+    category: "Interior",
+  },
+  {
+    src: "/images/IMG_4688.jpeg",
+    alt: "4",
     category: "Exterior",
   },
   {
-    src: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1600&q=80",
-    alt: "Eveniment privat",
-    category: "Interior",
+    src: "/images/IMG_4686.jpeg",
+    alt: "5",
+    category: "Exterior",
   },
   {
-    src: "https://images.unsplash.com/photo-1592861956120-e524fc739696?w=1600&q=80",
-    alt: "Detaliu de masă",
-    category: "Interior",
+    src: "/images/IMG_4694.jpeg",
+    alt: "6",
+    category: "Exterior",
   },
   {
-    src: "https://images.unsplash.com/photo-1555244162-803834f70033?w=1600&q=80",
-    alt: "Pahare aliniate pentru eveniment",
-    category: "Interior",
+    src: "/images/IMG_4702.jpeg",
+    alt: "7",
+    category: "Exterior",
+  },
+  {
+    src: "/images/IMG_4704.jpeg",
+    alt: "8",
+    category: "Exterior",
+  },
+  {
+    src: "/images/IMG_4705.jpeg",
+    alt: "9",
+    category: "Exterior",
+  },
+  {
+    src: "/images/IMG_4739.jpeg",
+    alt: "10",
+    category: "Exterior",
   },
 ];
 
