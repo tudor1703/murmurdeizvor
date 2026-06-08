@@ -42,7 +42,7 @@ export default function About() {
           >
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl luxury-border">
               <Image
-                src="/images/about.jpg"
+                src="images/IMG_4705.jpeg"
                 alt="Interior elegant Murmur de Izvor"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
