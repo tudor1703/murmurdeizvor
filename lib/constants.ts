@@ -109,12 +109,7 @@ export const EVENT_TYPES = [
     title: "Banchete & Private dining",
     description:
       "Spațiu adaptabil pentru reuniuni restrânse și evenimente exclusiviste.",
-  },
-  {
-    title: "Botezuri & Petreceri private",
-    description:
-      "Atenție la detalii și flexibilitate pentru momentele care contează.",
-  },
+  }
 ];
 
 export const EVENT_OPTIONS = [
