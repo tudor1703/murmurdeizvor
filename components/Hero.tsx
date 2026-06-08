@@ -14,7 +14,7 @@ export default function Hero() {
       {/* Cinematic background image — replace with /public/images/hero.jpg */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/IMG_4680.jpeg"
+          src="/images/about.jpg"
           alt=""
           fill
           priority
@@ -45,7 +45,7 @@ export default function Hero() {
         >
           <div className="relative h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48">
             <Image
-              src="/images/IMG_4680.jpeg"
+              src="/images/murmurLogo.png"
               alt="Murmur"
               fill
               className="object-contain"

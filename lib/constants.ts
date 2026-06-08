@@ -73,7 +73,7 @@ export const GALLERY_IMAGES: {
     category: "Exterior",
   },
   {
-    src: "/images/IMG_4705.jpeg",
+    src: "/images/IMG_4716.jpeg",
     alt: "9",
     category: "Exterior",
   },
