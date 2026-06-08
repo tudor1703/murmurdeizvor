@@ -14,7 +14,7 @@ export default function Hero() {
       {/* Cinematic background image — replace with /public/images/hero.jpg */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/murmureni.jpeg"
+          src="/images/IMG_4680.jpeg"
           alt=""
           fill
           priority
