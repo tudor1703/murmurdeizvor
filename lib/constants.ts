@@ -33,7 +33,7 @@ export const GALLERY_IMAGES: {
   category: "Interior" | "Exterior" | "Toate";
 }[] = [
   {
-    src: "\images\IMG_4616.jpeg",
+    src: "/images/IMG_4716.jpeg",
     alt: "1",
     category: "Interior",
   },
