@@ -26,11 +26,11 @@ export default function ImageCard({
       whileHover={{ y: -3 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "group relative block w-full overflow-hidden rounded-2xl bg-charcoal-50 luxury-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60",
+        "group relative block w-full h-full overflow-hidden rounded-2xl bg-charcoal-50 luxury-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60",
         className,
       )}
     >
-      <div className="relative aspect-[4/5] w-full overflow-hidden">
+      <div className="relative aspect-[4/5] h-full w-full overflow-hidden">
         <Image
           src={src}
           alt={alt}

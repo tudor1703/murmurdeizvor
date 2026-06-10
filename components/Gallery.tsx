@@ -74,7 +74,7 @@ export default function Gallery() {
         </div>
 
         {/* Masonry-ish grid */}
-        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
+        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 items-stretch">
           {items.map((img, i) => (
             <ImageCard
               key={img.src + i}
@@ -83,7 +83,9 @@ export default function Gallery() {
               caption={img.category}
               onClick={() => setOpenIndex(i)}
               className={
-                i % 5 === 0 ? "md:row-span-2 md:col-span-1" : undefined
+                items.length >= 5 && i % 5 === 0
+                  ? "md:row-span-2 md:min-h-0"
+                  : "aspect-[4/5]"
               }
             />
           ))}
