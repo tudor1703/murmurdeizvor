@@ -33,7 +33,7 @@ export const GALLERY_IMAGES: {
   category: "Interior" | "Exterior" | "Toate";
 }[] = [
   {
-    src: "\images\IMG_4690.jpeg",
+    src: "\images\IMG_4616.jpeg",
     alt: "1",
     category: "Interior",
   },
@@ -58,7 +58,7 @@ export const GALLERY_IMAGES: {
     category: "Exterior",
   },
   {
-    src: "/images/IMG_4694.jpeg",
+    src: "/images/IMG_4708.jpeg",
     alt: "6",
     category: "Exterior",
   },
@@ -73,7 +73,7 @@ export const GALLERY_IMAGES: {
     category: "Exterior",
   },
   {
-    src: "/images/IMG_4716.jpeg",
+    src: "/images/IMG_4694.jpeg",
     alt: "9",
     category: "Exterior",
   },
@@ -109,12 +109,7 @@ export const EVENT_TYPES = [
     title: "Banchete & Private dining",
     description:
       "Spațiu adaptabil pentru reuniuni restrânse și evenimente exclusiviste.",
-  },
-  {
-    title: "Botezuri & Petreceri private",
-    description:
-      "Atenție la detalii și flexibilitate pentru momentele care contează.",
-  },
+  }
 ];
 
 export const EVENT_OPTIONS = [

@@ -5,8 +5,6 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 EventType = Literal[
     "Rezervare",
-    "Eveniment privat",
-    "Corporate",
     "Altă solicitare",
 ]
 
