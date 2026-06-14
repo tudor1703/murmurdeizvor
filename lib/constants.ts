@@ -13,8 +13,8 @@ export const SITE = {
   mapLink:
     "https://www.google.com/maps/place/Murmur+de+Izvor+Restaurant+de+Evenimente/@47.1631112,28.7981682,17.4z/data=!4m15!1m8!3m7!1s0x40cbd93ff6d65275:0xc561d4c3a89d102b!2zUmF0dciZLCBNb2xkb3Zh!3b1!8m2!3d47.1671456!4d28.8044506!16s%2Fg%2F120r01gs!3m5!1s0x40cbd972ab7d894d:0xbd640d32968b83bc!8m2!3d47.1632342!4d28.7990216!16s%2Fg%2F11qt42zz83?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D",
   social: {
-    instagram: "#",
-    facebook: "#",
+    instagram: "https://www.instagram.com/murmurdeizvor.restaurant/",
+    facebook: "https://www.facebook.com/MurmurDeIzvor",
   },
 };
 
