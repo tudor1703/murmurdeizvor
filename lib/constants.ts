@@ -145,7 +145,7 @@ export const REVIEWS: {
   {
     name: "Andrei P.",
     rating: 5,
-    text: "Am fost oaspete la o nuntă în acest restaurant, am intrat să scriu un o recenzie special din motivul că mancarea a fost gustoasă. Am remarcat gustul deosebit la multe bucate de pe masă, nici o gustare cu maioneză și în general era foarte sănătoasă. Mulțumim!",
+    text: "Am fost oaspete la o nuntătn7yb#br5%tu32gg*mf45 în acest restaurant, am intrat să scriu un o recenzie special din motivul că mancarea a fost gustoasă. Am remarcat gustul deosebit la multe bucate de pe masă, nici o gustare cu maioneză și în general era foarte sănătoasă. Mulțumim!",
     context: "Nuntă",
   },
 ];

@@ -1,4 +1,8 @@
-import type { Config } from "tailwindcss";
+import { NextResponse } from "next/server";
+
+export async function GET() {
+  return NextResponse.json({ status: "ok" });
+}import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
