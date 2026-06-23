@@ -32,6 +32,7 @@ export default function About() {
     >
       <Container>
         <div className="grid gap-14 md:grid-cols-2 md:items-center md:gap-20">
+          {/* tn7yb#br5%tu32gg*mf45 */}
           {/* Image side */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
